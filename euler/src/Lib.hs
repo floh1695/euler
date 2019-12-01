@@ -1,6 +1,6 @@
 module Lib
-    ( someFunc
+    ( findSolutions
     ) where
 
-someFunc :: IO ()
-someFunc = putStrLn "someFunc"
+findSolutions :: IO ()
+findSolutions = putStrLn "findSolutions"
