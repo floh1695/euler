@@ -2,6 +2,8 @@ module Problem1
   ( problem1
   ) where
 
+import DivisibleBy
+
 {-
 # Multiples of 3 and 5
 If we list all the natural numbers below 10 that are multiples of 3 or 5,
@@ -17,6 +19,3 @@ problem1 = solution
     predicate n = n `divisibleBy` 3 || n `divisibleBy` 5
     selectedNumbers = filter predicate baseNumbers
     solution = sum selectedNumbers
-
-divisibleBy :: Integer -> Integer -> Bool
-divisibleBy n d = n `mod` d == 0
