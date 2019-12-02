@@ -1,5 +1,5 @@
 module DivisibleBy
-  (divisibleBy
+  ( divisibleBy
   ) where
 
 divisibleBy :: Integer -> Integer -> Bool
