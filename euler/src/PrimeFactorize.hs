@@ -7,16 +7,16 @@ import NextPrime
 
 primeFactorize :: Integer -> [Integer]
 primeFactorize n
-  | n <  0    = [-1] ++ primeFactorizeInnerStart (-n)
+  | n <  0    = [-1] ++ primeFactorize' (-n)
   | n == 0    = []
   | n == 1    = [1]
-  | otherwise = primeFactorizeInnerStart n
+  | otherwise = primeFactorize' n
 
-primeFactorizeInnerStart :: Integer -> [Integer]
-primeFactorizeInnerStart = primeFactorizeInner [] 2
+primeFactorize' :: Integer -> [Integer]
+primeFactorize' = primeFactorize'' [] 2
 
-primeFactorizeInner :: [Integer] -> Integer -> Integer -> [Integer]
-primeFactorizeInner xs p n
+primeFactorize'' :: [Integer] -> Integer -> Integer -> [Integer]
+primeFactorize'' xs p n
   | n == p            = (p:xs)
-  | n `divisibleBy` p = primeFactorizeInner (p:xs) p (n `div` p)
-  | otherwise         = primeFactorizeInner xs (nextPrime p) n
+  | n `divisibleBy` p = primeFactorize'' (p:xs) p (n `div` p)
+  | otherwise         = primeFactorize'' xs (nextPrime p) n

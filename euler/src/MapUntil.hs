@@ -3,11 +3,11 @@ module MapUntil
   ) where
 
 mapUntil :: (a -> b) -> (b -> Bool) -> [a] -> [b]
-mapUntil f p xs = mapUntilInner [] f p xs
+mapUntil f p xs = mapUntil' [] f p xs
 
-mapUntilInner :: [b] -> (a -> b) -> (b -> Bool) -> [a] -> [b]
-mapUntilInner ys f p (x:xs)
-  | continue  = mapUntilInner (y:ys) f p xs
+mapUntil' :: [b] -> (a -> b) -> (b -> Bool) -> [a] -> [b]
+mapUntil' ys f p (x:xs)
+  | continue  = mapUntil' (y:ys) f p xs
   | otherwise = ys
   where
     y        = f x
