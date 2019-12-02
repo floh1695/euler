@@ -16,6 +16,6 @@ problem1 :: Integer
 problem1 = solution
   where
     baseNumbers     = [1..999]
-    predicate n     = or $ [divisibleBy n] <*> [3, 5]
+    predicate n     = or $ map (divisibleBy n) [3, 5]
     selectedNumbers = filter predicate baseNumbers
     solution        = sum selectedNumbers
