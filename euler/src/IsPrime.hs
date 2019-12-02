@@ -5,14 +5,14 @@ module IsPrime
 import DivisibleBy
 
 isPrime :: Integer -> Bool
-isPrime n
-  | n <  2    = False
-  | n == 2    = True
-  | n == 3    = True
-  | otherwise = isPrime' 2 n
+isPrime = isPrime' 2
 
 isPrime' :: Integer -> Integer -> Bool
-isPrime' p n
-  | n == p            = True
-  | n `divisibleBy` p = False
-  | otherwise         = isPrime' (p + 1) n
+isPrime' t n
+  | n < 2             = False
+  | n `elem` [2, 3]   = True
+  | n == t            = True
+  | n `divisibleBy` t = False
+  | otherwise         = isPrime' t' n
+  where
+    t' = t + 1

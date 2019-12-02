@@ -15,7 +15,7 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 problem1 :: Integer
 problem1 = solution
   where
-    baseNumbers = [1..999]
-    predicate n = n `divisibleBy` 3 || n `divisibleBy` 5
+    baseNumbers     = [1..999]
+    predicate n     = n `divisibleBy` 3 || n `divisibleBy` 5
     selectedNumbers = filter predicate baseNumbers
-    solution = sum selectedNumbers
+    solution        = sum selectedNumbers

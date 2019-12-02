@@ -19,6 +19,6 @@ By considering the terms in the Fibonacci sequence whose values
 problem2 :: Integer
 problem2 = solution
   where
-    baseNumbers = mapUntil fibonacci (> 4000000) [0..]
+    baseNumbers     = mapUntil fibonacci (> 4000000) [0..]
     filteredNumbers = filter even baseNumbers
-    solution = sum filteredNumbers
+    solution        = sum filteredNumbers
