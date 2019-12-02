@@ -1,6 +1,32 @@
 module Lib
-  ( findSolutions
+  ( displaySolutions
   ) where
 
-findSolutions :: IO ()
-findSolutions = putStrLn "findSolutions"
+import Problem1
+import Problem2
+import Problem3
+
+displaySolutions :: IO ()
+displaySolutions = do
+  putStrLn "# Problems"
+  mapM_ putStrLn reports
+
+reports = map formatSolution problems
+
+-- problems :: Show a => [(Integer, a)]
+problems =
+  [ (1, problem1)
+  , (2, problem2)
+  , (3, problem3)
+  ]
+
+displaySolution :: Show a => Integer -> a -> IO ()
+displaySolution n s = putStrLn report
+  where
+    report = formatSolution (n, s)
+
+formatSolution :: Show a => (Integer, a) -> String
+formatSolution (n, s) = n' ++ ".\t" ++ s'
+  where
+    n' = show n
+    s' = show s
