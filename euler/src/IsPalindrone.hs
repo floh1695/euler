@@ -3,8 +3,7 @@ module IsPalindrone
   ) where
 
 isPalindrone :: Integer -> Bool
-isPalindrone n = solution
+isPalindrone n = asString == reversed
   where
     asString = show n
     reversed = reverse asString
-    solution = asString == reversed

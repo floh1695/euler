@@ -13,9 +13,8 @@ The sum of these multiples is 23.
 Find the sum of all the multiples of 3 or 5 below 1000.
 -}
 problem1 :: Integer
-problem1 = solution
+problem1 = sum selectedNumbers
   where
     baseNumbers     = [1..999]
-    predicate n     = or $ map (divisibleBy n) [3, 5]
+    predicate       = divisibleByAnyOf [3, 5]
     selectedNumbers = filter predicate baseNumbers
-    solution        = sum selectedNumbers

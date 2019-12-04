@@ -14,9 +14,8 @@ The largest palindrome made from the product
 Find the largest palindrome made from the product of two 3-digit numbers.
 -}
 problem4 :: Integer
-problem4 = solution
+problem4 = maximum palindrones
   where
     products     = reverse [100..999]
     combinations = cartesian (*) products products
     palindrones  = filter isPalindrone combinations
-    solution     = maximum palindrones

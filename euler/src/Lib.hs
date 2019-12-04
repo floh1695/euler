@@ -15,7 +15,6 @@ displaySolutions = do
 
 reports = map formatSolution problems
 
--- problems :: Show a => [(Integer, a)]
 problems =
   [ (1, problem1)
   , (2, problem2)

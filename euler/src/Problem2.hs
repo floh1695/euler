@@ -17,8 +17,7 @@ By considering the terms in the Fibonacci sequence whose values
   find the sum of the even-valued terms.
 -}
 problem2 :: Integer
-problem2 = solution
+problem2 = sum filteredNumbers
   where
     baseNumbers     = mapUntil fibonacci (> 4000000) [0..]
     filteredNumbers = filter even baseNumbers
-    solution        = sum filteredNumbers

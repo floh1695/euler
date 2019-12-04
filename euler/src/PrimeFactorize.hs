@@ -17,6 +17,8 @@ primeFactorize' = primeFactorize'' [] 2
 
 primeFactorize'' :: [Integer] -> Integer -> Integer -> [Integer]
 primeFactorize'' xs p n
-  | n == p            = (p:xs)
-  | n `divisibleBy` p = primeFactorize'' (p:xs) p (n `div` p)
+  | n == p            = xs'
+  | n `divisibleBy` p = primeFactorize'' xs' p (n `div` p)
   | otherwise         = primeFactorize'' xs (nextPrime p) n
+  where
+    xs' = p:xs
