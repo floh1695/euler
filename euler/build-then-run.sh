@@ -1,4 +1,4 @@
 #!/bin/sh
 
 stack build
-stack exec euler-exe | tee report.md
+stack exec euler-exe | tee .report.secret.md

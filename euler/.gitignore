@@ -1,4 +1,11 @@
+# Build Tool
 .stack-work/
 euler.cabal
-report.md
+
+# Secrets
+.*.secret
+.*.secret.*
+
+# Editor
+.*.swp
 *~
