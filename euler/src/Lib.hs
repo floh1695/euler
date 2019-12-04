@@ -6,6 +6,7 @@ import Problem1
 import Problem2
 import Problem3
 import Problem4
+import Problem5
 
 displaySolutions :: IO ()
 displaySolutions = do
@@ -20,6 +21,7 @@ problems =
   , (2, problem2)
   , (3, problem3)
   , (4, problem4)
+  , (5, problem5)
   ]
 
 displaySolution :: Show a => Integer -> a -> IO ()
