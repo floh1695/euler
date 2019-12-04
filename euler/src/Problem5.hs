@@ -2,7 +2,7 @@ module Problem5
   ( problem5
   ) where
 
-import LeastCommonMultiple
+import Math
 
 {-
 # Smallest multiple

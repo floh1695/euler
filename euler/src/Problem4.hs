@@ -2,8 +2,8 @@ module Problem4
   ( problem4
   ) where
 
-import IsPalindrone
 import List
+import Math
 
 {-
 # Largest palindrome product

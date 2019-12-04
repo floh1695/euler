@@ -2,8 +2,8 @@ module Problem2
   ( problem2
   ) where
 
-import Fibonacci
 import List
+import Math
 
 {-
 # Even Fibonacci numbers

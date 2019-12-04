@@ -4,7 +4,7 @@ module Prime
   , factorize
   ) where
 
-import DivisibleBy
+import Math
 
 
 isPrime :: Integer -> Bool

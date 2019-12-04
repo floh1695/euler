@@ -2,7 +2,7 @@ module Problem1
   ( problem1
   ) where
 
-import DivisibleBy
+import Math
 
 {-
 # Multiples of 3 and 5
