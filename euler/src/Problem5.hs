@@ -2,7 +2,6 @@ module Problem5
   ( problem5
   ) where
 
-import IsPrime
 import LeastCommonMultiple
 
 {-
@@ -14,6 +13,4 @@ What is the smallest positive number that is
   evenly divisible by all of the numbers from 1 to 20?
 -}
 problem5 :: Integer
-problem5 = foldr leastCommonMultiple 1 numbers
-  where
-    numbers = [1..20]
+problem5 = foldr leastCommonMultiple 1 [1..20]

@@ -2,7 +2,7 @@ module Problem3
   ( problem3
   ) where
 
-import PrimeFactorize
+import Prime
 
 {-
 # Largest prime factor
@@ -14,4 +14,4 @@ problem3 :: Integer
 problem3 = maximum factors
   where
     number   = 600851475143
-    factors  = primeFactorize number
+    factors  = factorize number
