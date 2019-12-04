@@ -1,6 +1,11 @@
-module MapUntil
-  ( mapUntil
+module List
+  ( cartesian
+  , mapUntil
   ) where
+
+cartesian :: (a -> b -> c) -> [a] -> [b] -> [c]
+cartesian f xs ys = [f x y | x <- xs, y <- ys]
+
 
 mapUntil :: (a -> b) -> (b -> Bool) -> [a] -> [b]
 mapUntil = mapUntil' []

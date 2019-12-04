@@ -3,7 +3,7 @@ module Problem2
   ) where
 
 import Fibonacci
-import MapUntil
+import List
 
 {-
 # Even Fibonacci numbers
