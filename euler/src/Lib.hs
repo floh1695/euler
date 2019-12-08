@@ -11,27 +11,24 @@ import Problem6
 
 displaySolutions :: IO ()
 displaySolutions = do
-  putStrLn "# Problems"
+  putStrLn "# Solutions"
   mapM_ putStrLn reports
 
-reports = map formatSolution problems
+reports = map formatSolution solutions
 
-problems =
-  [ (1, problem1)
-  , (2, problem2)
-  , (3, problem3)
-  , (4, problem4)
-  , (5, problem5)
-  , (6, problem6)
+data Solution a = Solution Integer a
+
+solutions =
+  [ Solution 1 problem1
+  , Solution 2 problem2
+  , Solution 3 problem3
+  , Solution 4 problem4
+  , Solution 5 problem5
+  , Solution 6 problem6
   ]
 
-displaySolution :: Show a => Integer -> a -> IO ()
-displaySolution n s = putStrLn report
-  where
-    report = formatSolution (n, s)
-
-formatSolution :: Show a => (Integer, a) -> String
-formatSolution (n, s) = n' ++ ".\t" ++ s'
+formatSolution :: Show a => (Solution a) -> String
+formatSolution (Solution n s) = n' ++ ".\t" ++ s'
   where
     n' = show n
     s' = show s
