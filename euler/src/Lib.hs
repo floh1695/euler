@@ -8,6 +8,7 @@ import Problem3
 import Problem4
 import Problem5
 import Problem6
+import Problem7
 
 displaySolutions :: IO ()
 displaySolutions = do
@@ -25,6 +26,7 @@ solutions =
   , Solution 4 problem4
   , Solution 5 problem5
   , Solution 6 problem6
+  , Solution 7 problem7
   ]
 
 formatSolution :: Show a => (Solution a) -> String
