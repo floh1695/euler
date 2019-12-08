@@ -2,10 +2,14 @@
 
 import subprocess
 
+def any(iterr):
+  return len(iterr) > 0
+
 def process(args, out_f=None):
   p = subprocess.Popen(
     args,
-    stdout=subprocess.PIPE)
+    stdout=subprocess.PIPE,
+    stderr=subprocess.PIPE)
 
   p.wait()
 
@@ -13,7 +17,15 @@ def process(args, out_f=None):
     .read() \
     .decode('utf-8')
 
-  print(stdout)
+  stderr = p.stderr \
+    .read() \
+    .decode('utf-8')
+
+  if any(stdout):
+    print(stdout)
+
+  if any(stderr):
+    print(stderr)
 
   if out_f != None:
     out_f.write(stdout)
