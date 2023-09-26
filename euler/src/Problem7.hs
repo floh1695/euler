@@ -4,7 +4,7 @@ module Problem7
 
 import Prime
 
-{-
+{-|
 # 10001st prime
 By listing the first six prime numbers:
   2, 3, 5, 7, 11, and 13,

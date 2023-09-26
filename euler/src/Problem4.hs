@@ -5,7 +5,7 @@ module Problem4
 import List
 import Math
 
-{-
+{-|
 # Largest palindrome product
 A palindromic number reads the same both ways.
 The largest palindrome made from the product
