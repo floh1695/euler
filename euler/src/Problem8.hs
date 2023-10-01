@@ -3,6 +3,7 @@ module Problem8
   ) where
 
 import Data.Char (digitToInt)
+import Data.List (tails)
 
 {-|
 # Largest Product in a Series
@@ -32,17 +33,17 @@ The four adjacent digits in the 1000-digit number that have the greatest product
 Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?
 -}
 problem8 :: Integer
-problem8 = search bigNumberDigits 0
+problem8 = bigNumberDigits
+  |> tails
+  |> map (take 13)
+  |> filter ((>= 13) . length)
+  |> map product
+  |> foldl max 0
 
-search :: [Integer] -> Integer -> Integer
-search digits current
-  | length factors < 12  =  current
-  | otherwise            =  search digits' current'
-  where
-    digits'  = tail digits
-    factors  = take 13 digits
-    guess    = product factors
-    current' = max current guess
+infixl 0 |>
+-- | TODO: Switch to flow
+(|>) :: a -> (a -> b) -> b
+(|>) = flip ($)
 
 bigNumberDigits :: [Integer]
 bigNumberDigits = map (toInteger . digitToInt) bigNumberString
