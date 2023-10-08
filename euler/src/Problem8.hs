@@ -3,6 +3,7 @@ module Problem8
   ) where
 
 import Data.Char (digitToInt)
+import Data.Function ((&))
 import Data.List (tails)
 
 {-|
@@ -34,16 +35,11 @@ Find the thirteen adjacent digits in the 1000-digit number that have the greates
 -}
 problem8 :: Integer
 problem8 = bigNumberDigits
-  |> tails
-  |> map (take 13)
-  |> filter ((>= 13) . length)
-  |> map product
-  |> foldl max 0
-
-infixl 0 |>
--- | TODO: Switch to flow
-(|>) :: a -> (a -> b) -> b
-(|>) = flip ($)
+  & tails
+  & map (take 13)
+  & filter ((>= 13) . length)
+  & map product
+  & foldl max 0
 
 bigNumberDigits :: [Integer]
 bigNumberDigits = map (toInteger . digitToInt) bigNumberString
