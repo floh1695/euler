@@ -11,12 +11,22 @@ import Problem6
 import Problem7
 import Problem8
 
+import System.TimeIt
+
 displaySolutions :: IO ()
 displaySolutions = do
   putStrLn "# Solutions"
-  mapM_ putStrLn reports
+  mapM_ timing reportsIO
+  where
+    timing f = do
+      timeIt f
+      putStrLn ""
 
+reports :: [String]
 reports = map formatSolution solutions
+
+reportsIO :: [IO ()]
+reportsIO = map putStrLn reports
 
 data Solution a = Solution Integer a
 
@@ -31,7 +41,7 @@ solutions =
   , Solution 8 problem8
   ]
 
-formatSolution :: Show a => (Solution a) -> String
+formatSolution :: Show a => Solution a -> String
 formatSolution (Solution n s) = n' ++ ".\t" ++ s'
   where
     n' = show n
