@@ -10,6 +10,7 @@ import Problem5 (problem5)
 import Problem6 (problem6)
 import Problem7 (problem7)
 import Problem8 (problem8)
+import Problem10 (problem10)
 
 import System.TimeIt (timeIt)
 
@@ -31,14 +32,15 @@ reportsIO = map putStrLn reports
 data Solution a = Solution Integer a
 
 solutions =
-  [ Solution 1 problem1
-  , Solution 2 problem2
-  , Solution 3 problem3
-  , Solution 4 problem4
-  , Solution 5 problem5
-  , Solution 6 problem6
-  , Solution 7 problem7
-  , Solution 8 problem8
+  [ Solution  1 problem1
+  , Solution  2 problem2
+  , Solution  3 problem3
+  , Solution  4 problem4
+  , Solution  5 problem5
+  , Solution  6 problem6
+  , Solution  7 problem7
+  , Solution  8 problem8
+  , Solution 10 problem10
   ]
 
 formatSolution :: Show a => Solution a -> String
