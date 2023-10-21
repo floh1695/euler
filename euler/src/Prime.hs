@@ -9,19 +9,22 @@ import Math
 
 
 isPrime :: Integer -> Bool
-isPrime = isPrime' 2
-
-isPrime' :: Integer -> Integer -> Bool
-isPrime' t n
+isPrime n
   | n < 2             = False
   | n `elem` [2, 3]   = True
-  | t > maxTest n     = True
+  | n `divisibleBy` 2 = False
+  | otherwise         = isPrime' maxTest 3 n
+  where
+    maxTest = ceiling . sqrt . fromInteger $ n
+
+isPrime' :: Integer -> Integer -> Integer -> Bool
+isPrime' m t n
   | n == t            = True
   | n `divisibleBy` t = False
-  | otherwise         = isPrime' t' n
+  | t > m             = True
+  | otherwise         = isPrime' m t' n
   where
-    t'      = t + 1
-    maxTest = ceiling . sqrt . fromInteger
+    t' = t + 2
 
 
 nextPrime :: Integer -> Integer
@@ -48,7 +51,7 @@ nthPrime' n p
 
 factorize :: Integer -> [Integer]
 factorize n
-  | n <  0    = [-1] ++ factorize' (-n)
+  | n <  0    = -1 : factorize' (-n)
   | n == 0    = []
   | n == 1    = [1]
   | otherwise = factorize' n
