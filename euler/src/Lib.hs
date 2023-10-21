@@ -2,16 +2,16 @@ module Lib
   ( displaySolutions
   ) where
 
-import Problem1
-import Problem2
-import Problem3
-import Problem4
-import Problem5
-import Problem6
-import Problem7
-import Problem8
+import Problem1 (problem1)
+import Problem2 (problem2)
+import Problem3 (problem3)
+import Problem4 (problem4)
+import Problem5 (problem5)
+import Problem6 (problem6)
+import Problem7 (problem7)
+import Problem8 (problem8)
 
-import System.TimeIt
+import System.TimeIt (timeIt)
 
 displaySolutions :: IO ()
 displaySolutions = do
